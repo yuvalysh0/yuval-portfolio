@@ -154,7 +154,6 @@
 
 .about-box {
   position: absolute;
-  display: block;
   width: 700px;
   height: 500px;
   border-top: 2px solid var(--q-color-primary);
@@ -183,7 +182,16 @@
   font-size: 1.7em;
 }
 
+.display-flex {
+  margin-top: 2em;
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  align-items: start;
+}
+
 .about-box .secondary-text {
+  font-stretch: expanded;
   top: 5%;
   position: relative;
   font-size: 1.3em;
@@ -191,7 +199,13 @@
   margin-bottom: 2.5em;
 }
 
-.secondary-text span:hover {
+
+.secondary-text span a {
+  text-decoration: none;
+  color: white;
+}
+
+.secondary-text span a:hover {
   color: var(--q-color-primary);
   font-weight: bold;
   cursor: pointer;
@@ -299,11 +313,40 @@
   width: 60%;
 }
 
+.profile-picture-container {
+  display: block;
+  position: relative;
+}
+
+.profile-picture-container:hover {
+  cursor: pointer;
+  .profile-picture-border {
+    transform: translateY(10%);
+  }
+
+  .profile-pic {
+    cursor: pointer;
+    filter: none;
+    transition: 0.3s ease;
+    transform: translateY(0);
+  }
+}
+
+.profile-picture-border {
+  width: 150px;
+  aspect-ratio: 1;
+  border: 1px dashed var(--q-color-primary);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+
 .profile-pic {
+  filter: sepia(100%) contrast(0.8);
+  display: block;
   width: 150px;
   float: right;
   margin: 0.5em;
-  display: block;
   border-radius: 10px;
 }
 
@@ -330,7 +373,6 @@
 .project {
   gap: 10px;
   height: 150px;
-  z-index: 1;
   top: 10%;
   position: relative;
   display: flex;
