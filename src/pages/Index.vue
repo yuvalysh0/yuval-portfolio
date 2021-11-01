@@ -88,7 +88,7 @@
               <div class="profile-picture-border"></div>
             </div>
           </div>
-          <a href="#" class="btn btn-primary btn-animate">My Resume</a>
+          <a href="../assets/my-resume.pdf" target="_blank" class="btn btn-primary btn-animate">My Resume</a>
 
           <h1 class="primary-text primary-skills">The technologies I use: </h1>
 
@@ -219,7 +219,7 @@
             <form
               class="q-gutter-md"
               ref="form"
-              action="https://formsubmit.co/yuvalysh0@gmail.com"
+              action="https://formsubmit.co/cec66285110fa70eb3ad679c4d8c317e"
               method="POST"
             >
               <q-input
