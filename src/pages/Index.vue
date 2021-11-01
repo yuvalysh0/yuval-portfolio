@@ -1,5 +1,17 @@
 <template>
   <q-page class="my-font">
+    <div
+      class="menu"
+      :class="{'menu-clicked' : isPhoneActive}"
+    >
+      <q-btn id="close-btn" icon="close" flat size="20px" unelevated @click="miniToggle()"/>
+      <ul>
+        <li><a href="#home" @click="miniToggle()">Home</a></li>
+        <li><a href="#about" @click="miniToggle()">About</a></li>
+        <li><a href="#projects" @click="miniToggle()">Projects</a></li>
+        <li><a href="#contact" @click="miniToggle()">Contact</a></li>
+      </ul>
+    </div>
     <div class="header" id="home">
       <q-header reveal class="bg-transparent">
         <q-toolbar class="constrain">
@@ -18,13 +30,19 @@
               <q-btn><a href="#contact">Contact</a></q-btn>
             </q-btn-group>
 
-            <tasty-burger-button
-              :type="buttonType"
-              :active="isActive"
-              :size="size"
-              :color="color"
-              :active-color="activeColor"
-              v-on:toggle="onToggle"/>
+            <button id="open-btn" :class="{'mini-button-animation' : !isPhoneActive}" class="mini-button"
+                    @click="miniToggle()" style="background: none; border: none">
+              <q-icon name="menu" color="white" size="lg"/>
+            </button>
+            <div class="tasty-burger">
+              <tasty-burger-button
+                :type="buttonType"
+                :active="isActive"
+                :size="size"
+                :color="color"
+                :active-color="activeColor"
+                v-on:toggle="onToggle"/>
+            </div>
           </div>
 
         </q-toolbar>
@@ -47,17 +65,23 @@
 
           <div class="display-flex">
             <p class="secondary-text">
-              My name is Yuval Shalom, I’m 23 years old from <span><a href="https://en.wikipedia.org/wiki/Bat_Yam" target="_blank">Bat-Yam, Israel.</a></span>
-              <br>
-              I play football as a striker in <span><a href="https://www.football.org.il/players/player/?player_id=233242" target="_blank">Maccabi-Yavne F.C.</a></span><br>
-              Oh and I’m also a <span><a href="https://www.linkedin.com/in/yuval-shalom-8b64921bb/" target="_blank">full stack web developer</a></span><br>
-              After I finished my <span><a href="https://en.wikipedia.org/wiki/Military_Police_Corps_(Israel)" target="_blank">military service,</a></span> I wanted to do something meaningful and enjoyable,
+              My name is Yuval Shalom, I’m 23 years old from <span><a href="https://en.wikipedia.org/wiki/Bat_Yam"
+                                                                      target="_blank">Bat-Yam, Israel.</a></span>
+
+              I play football as a striker in <span><a
+              href="https://www.football.org.il/players/player/?player_id=233242" target="_blank">Maccabi-Yavne F.C.</a></span>
+              Oh and I’m also a <span><a href="https://www.linkedin.com/in/yuval-shalom-8b64921bb/" target="_blank">full stack web developer</a></span>
+              After I finished my <span><a href="https://en.wikipedia.org/wiki/Military_Police_Corps_(Israel)"
+                                           target="_blank">military service,</a></span> I wanted to do something
+              meaningful and enjoyable,
               so I started programming.
-              <br>
-              I decided to study <span><a href="https://www.youtube.com/watch?v=N775KsWQVkw" target="_blank">computer science</a></span> at HIT.
-              <br>
+
+              I decided to study <span><a href="https://www.youtube.com/watch?v=N775KsWQVkw" target="_blank">computer science</a></span>
+              at HIT.
+
               After one year of studying I took a year brake from the degree so I can
-              bring my programming skills to <span><a href="https://www.youtube.com/watch?v=S-AGE8rDs3Q" target="_blank">another level.</a></span>
+              bring my programming skills to <span><a href="https://www.youtube.com/watch?v=S-AGE8rDs3Q"
+                                                      target="_blank">another level.</a></span>
             </p>
             <div class="profile-picture-container">
               <img class="profile-pic" src="../assets/profilePic.jpg" alt="profile">
@@ -123,7 +147,6 @@
                 <q-linear-progress :value="0.6" class="tech-list-progress"/>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -131,33 +154,44 @@
 
       <div class="projects" id="projects">
         <div class="about-box about-box-projects contact-box">
-          <h1 class="primary-text primary-about">My Projects</h1>
+          <h1 class="primary-text primary-about primary-project-contact">My Projects</h1>
 
           <div class="project">
             <div class="project-text">
               <p class="project-text-primary">FriendsBook</p>
-              <p class="project-text-secondary">A social network built with Vuejs, Vuex, Css, Quasar framework FireBase, Nodejs and Express.</p>
+              <p class="project-text-secondary">A social network built with Vuejs, Vuex, Css, Quasar framework FireBase,
+                Nodejs and Express.</p>
             </div>
-            <a href="https://github.com/yuvalysh0/Friendsbook" target="_blank" class="btn-mini btn-primary-mini btn-animate">Github</a>
-            <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+            <div class="github-link">
+              <a href="https://github.com/yuvalysh0/Friendsbook" target="_blank"
+                 class="btn-mini btn-primary-mini btn-animate">Github</a>
+              <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+            </div>
           </div>
 
           <div class="project">
             <div class="project-text">
               <p class="project-text-primary">Flash Media Scheduler</p>
-              <p class="project-text-secondary">This app was built by the flashdev students and I (4 people). We used Vuejs, Vuex, Quasar framework, Firebase, Css, Bitbucket and Jira.</p>
+              <p class="project-text-secondary">This app was built by the flashdev students and I (4 people). We used
+                Vuejs, Vuex, Quasar framework, Firebase, Css, Bitbucket and Jira.</p>
             </div>
-            <a href="#" target="_blank" class="btn-mini btn-primary-mini btn-animate">Github</a>
-            <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+            <div class="github-link">
+              <a href="#" target="_blank" class="btn-mini btn-primary-mini btn-animate">Github</a>
+              <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+            </div>
           </div>
 
           <div class="project">
             <div class="project-text">
               <p class="project-text-primary">My Portfolio</p>
-              <p class="project-text-secondary">A personal portfolio that was built with Vuejs, Css and Quasar framework</p>
+              <p class="project-text-secondary">A personal portfolio that was built with Vuejs, Css and Quasar
+                framework</p>
             </div>
-            <a href="https://github.com/yuvalysh0/yuval-portfolio" target="_blank" class="btn-mini btn-primary-mini btn-animate">Github</a>
-            <a href="#projects" class="btn-mini btn-primary-mini btn-animate" @click="openDialog = true">Demo</a>
+            <div class="github-link">
+              <a href="https://github.com/yuvalysh0/yuval-portfolio" target="_blank"
+                 class="btn-mini btn-primary-mini btn-animate">Github</a>
+              <a href="#projects" class="btn-mini btn-primary-mini btn-animate" @click="openDialog = true">Demo</a>
+            </div>
             <q-dialog v-model="openDialog">
               <q-card dark class="q-pa-md">
                 <q-card-section>
@@ -169,7 +203,7 @@
                 </q-card-section>
 
                 <q-card-actions align="right">
-                  <q-btn flat label="OK" color="primary" v-close-popup />
+                  <q-btn flat label="OK" color="primary" v-close-popup/>
                 </q-card-actions>
               </q-card>
             </q-dialog>
@@ -180,7 +214,7 @@
 
       <div class="contact" id="contact">
         <div class="about-box contact-box">
-          <h1 class="primary-text primary-about">Contact Me</h1>
+          <h1 class="primary-text primary-about primary-project-contact">Contact Me</h1>
           <div class="contact-form secondary-text">
             <form
               class="q-gutter-md"
@@ -215,7 +249,7 @@
               <q-input
                 dark
                 name="message"
-                label="Write here whatever you want to ask me :) "
+                label="Write here :) "
                 v-model="formData.text"
                 filled
                 type="textarea"
@@ -269,6 +303,7 @@ export default {
       openDialog: false,
       activateMenu: false,
       buttonType: 'spin',
+      isPhoneActive: false,
       isActive: false,
       size: 's',
       color: 'white',
@@ -280,6 +315,10 @@ export default {
     BackToTop
   },
   methods: {
+    miniToggle() {
+      this.isPhoneActive = !this.isPhoneActive
+      console.log(this.isPhoneActive)
+    },
     onToggle(active) {
       this.activateMenu = !this.activateMenu
     },

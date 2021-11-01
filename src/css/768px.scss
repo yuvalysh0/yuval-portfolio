@@ -1,0 +1,61 @@
+@media screen and (max-width: 769px) {
+
+  .header {
+    height: 90vh;
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0% 100%);
+  }
+
+  .main-header-primary {
+    font-size: 4.5em;
+  }
+
+  .main-header-secondary {
+    font-size: 2.5em;
+  }
+
+  .about-box {
+    width: 600px;
+    height: 550px;
+  }
+
+  .about-box .primary-about {
+    display: inline-block;
+    padding-right: 1em;
+    background: #171616;
+    position: absolute;
+    top: -12%;
+    left: 0;
+  }
+
+  .about-box .primary-skills {
+    font-size: 1.7em;
+  }
+
+  .about-box .secondary-text {
+    font-size: 1.2em;
+  }
+
+  .btn:link,
+  .btn:visited {
+    font-size: 1.2em;
+  }
+
+  .about-box-projects {
+    width: 600px;
+    height: 550px;
+  }
+
+
+  .contact-form {
+    margin: 2em auto;
+  }
+
+  .useful-links {
+    left: 5%;
+  }
+
+  .useful-links .line {
+    height: 40vh;
+  }
+
+}
