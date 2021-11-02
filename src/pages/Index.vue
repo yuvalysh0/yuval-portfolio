@@ -70,7 +70,7 @@
 
               I play football as a striker in <span><a
               href="https://www.football.org.il/players/player/?player_id=233242" target="_blank">Maccabi-Yavne F.C.</a></span>
-              Oh and I’m also a <span><a href="https://www.linkedin.com/in/yuval-shalom-8b64921bb/" target="_blank">full stack web developer</a></span>
+              Oh and I’m also a <span><a href="https://www.linkedin.com/in/yuval-shalom-8b64921bb/" target="_blank">full stack web developer.</a></span>
               After I finished my <span><a href="https://en.wikipedia.org/wiki/Military_Police_Corps_(Israel)"
                                            target="_blank">military service,</a></span> I wanted to do something
               meaningful and enjoyable,
@@ -88,7 +88,7 @@
               <div class="profile-picture-border"></div>
             </div>
           </div>
-          <a href="../assets/my-resume.pdf" target="_blank" class="btn btn-primary btn-animate">My Resume</a>
+          <a href="https://smallpdf.com/result#r=b71ff87643e2f3c1777065ce87780ab5&t=share-document" target="_blank" class="btn btn-primary btn-animate">My Resume</a>
 
           <h1 class="primary-text primary-skills">The technologies I use: </h1>
 
