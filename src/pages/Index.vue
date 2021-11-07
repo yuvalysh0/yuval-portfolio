@@ -88,7 +88,7 @@
               <div class="profile-picture-border"></div>
             </div>
           </div>
-          <a href="https://smallpdf.com/result#r=b71ff87643e2f3c1777065ce87780ab5&t=share-document" target="_blank" class="btn btn-primary btn-animate">My Resume</a>
+          <a href="https://docs.google.com/document/d/1gcGe9CF0DvQJq43BZ3-hgwhJx8JbF_cn/edit?usp=sharing&ouid=106324075329123761401&rtpof=true&sd=true" target="_blank" class="btn btn-primary btn-animate">My Resume</a>
 
           <h1 class="primary-text primary-skills">The technologies I use: </h1>
 
@@ -165,7 +165,7 @@
             <div class="github-link">
               <a href="https://github.com/yuvalysh0/Friendsbook" target="_blank"
                  class="btn-mini btn-primary-mini btn-animate">Github</a>
-              <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+              <a href="https://www.youtube.com/watch?v=burhfu39e-U" target="_blank" class="btn-mini btn-primary-mini btn-animate">Demo</a>
             </div>
           </div>
 
@@ -176,9 +176,24 @@
                 Vuejs, Vuex, Quasar framework, Firebase, Css, Bitbucket and Jira.</p>
             </div>
             <div class="github-link">
-              <a href="#" target="_blank" class="btn-mini btn-primary-mini btn-animate">Github</a>
-              <a href="#" class="btn-mini btn-primary-mini btn-animate">Demo</a>
+              <a href="#project" @click="demo = true" class="btn-mini btn-primary-mini btn-animate">Github</a>
+              <a href="#project" @click="demo = true" class="btn-mini btn-primary-mini btn-animate">Demo</a>
             </div>
+            <q-dialog v-model="demo">
+              <q-card dark>
+                <q-card-section>
+                  <div class="text-h6">Not uploaded yet</div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  I didn't upload it yet :)
+                </q-card-section>
+
+                <q-card-actions align="right">
+                  <q-btn flat label="OK" color="primary" v-close-popup />
+                </q-card-actions>
+              </q-card>
+            </q-dialog>
           </div>
 
           <div class="project">
@@ -280,6 +295,9 @@
         </ul>
         <div class="line"></div>
       </div>
+      <q-page-sticky position="bottom-right" id="sticky-btn" :offset="[18, 18]">
+        <q-btn @click="goUp()" fab-mini icon="eva-arrow-ios-upward" color="primary" />
+      </q-page-sticky>
     </q-page-container>
     <q-footer reveal>
       <p>Crafted By Me</p>
@@ -291,6 +309,7 @@
 <script>
 import {TastyBurgerButton} from 'vue-tasty-burgers'
 import BackToTop from 'vue-backtotop'
+
 
 export default {
   data() {
@@ -307,7 +326,8 @@ export default {
       isActive: false,
       size: 's',
       color: 'white',
-      activeColor: 'white'
+      activeColor: 'white',
+      demo: false,
     }
   },
   components: {
@@ -326,6 +346,10 @@ export default {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0;
     },
+    handleScroll (event) {
+      console.log(event)
+      console.log(this.handleScroll())
+    }
   },
 }
 </script>
