@@ -79,7 +79,7 @@
               I decided to study <span><a href="https://www.youtube.com/watch?v=N775KsWQVkw" target="_blank">computer science</a></span>
               at HIT.
 
-              After one year of studying I took a year brake from the degree so I can
+              After one year of studying I took a year break from the degree so I can
               bring my programming skills to <span><a href="https://www.youtube.com/watch?v=S-AGE8rDs3Q"
                                                       target="_blank">another level.</a></span>
             </p>
